@@ -33,5 +33,5 @@ As seguintes ferramentas foram usadas na construção do projeto:
     <img alt="Print do Login do Sistema help desk" title="Login" src="./assets/login.png" />
     <img alt="Print da tela Home do Sistema " title="Home" src="./assets/home.png" />
     <img alt="Print da tela de resgistrar chamados no sistema help desk" title="Registrar" src="./assets/register_ch.png" />
-    <img alt="Print tela lista de chamados abertos" title="Lista de chamados" src="./assets/list_chamados.png" />
+    <img alt="Print tela lista de chamados abertos" title="Lista de chamados" src="./assets/2.png" />
 </h3>
