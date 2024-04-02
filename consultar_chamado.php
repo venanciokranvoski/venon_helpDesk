@@ -1,4 +1,19 @@
 <?php  require_once "validator.php" ?>
+<?php  
+  // abrir o arquivo 
+  $file = fopen('chamado.hd', 'r');
+
+
+  $chamados = array();
+
+  //enquanto houver registros (linhas)  a serem recuperados
+  while(!feof($file)){ // testa pelo fim de um arquivo
+    //linhas
+    $registro = fgets($file);
+    $chamados[] = $registro;
+  }
+  fclose($file);
+?>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -40,24 +55,38 @@
             </div>
             
             <div class="card-body">
+
+            <?php  foreach($chamados as $content_chamados => $item){ ?>
+
+              <?php 
+                $newData = explode('#', $item);
+                
+                // echo '<pre>';
+                // print_r($newData);
+                // echo '</pre>';
+
+                if($_SESSION['perfil_id'] == 2){
+                  
+                  if($_SESSION['id'] != $newData[0]){
+                    continue;
+                  }
+
+                }
+                
+                if(empty($item)){
+                  continue;
+                }
+              ?>
               
               <div class="card mb-3 bg-light">
                 <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
-
+                  <h5 class="card-title"><?= strtoupper($newData[1]) ?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?= $newData[2]?></h6>
+                  <p class="card-text"><?= $newData[3] ?></p>
                 </div>
               </div>
 
-              <div class="card mb-3 bg-light">
-                <div class="card-body">
-                  <h5 class="card-title">Título do chamado...</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Categoria</h6>
-                  <p class="card-text">Descrição do chamado...</p>
-
-                </div>
-              </div>
+              <?php }  ?>
 
               <div class="row mt-5">
                 <div class="col-6">
