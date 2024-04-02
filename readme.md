@@ -23,6 +23,8 @@
 As seguintes ferramentas foram usadas na construção do projeto:
 
 - [PHP](https://www.php.net/docs.php)
+- [Bootstrap](https://getbootstrap.com.br/)
+- [HTML%](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 
 <h2 id="autor">Autor</h2>
 
